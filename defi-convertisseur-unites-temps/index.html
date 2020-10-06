@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Time unit converter</title>
+  </head>
+  <body>
+
+    <label for="numberOfYears">Enter a number of years here:</label><br>
+    <input type="number" name"numberOfYears" id="numberOfYears">
+    <input type="submit" value="convert" id="convert">
+
+    <p id="resultSeconds"></p>
+    <p id="resultMinutes"></p>
+    <p id="resultHours"></p>
+    <p id="resultDays"></p>
+
+
+
+<!-- choisir unité d'entrée et de sortie -->
+    <br>
+    <label for="enterNumber">Enter a number and choose his unites :</label><br>
+    <input type="number" name="newNumber" id="newNumber">
+    <select name="uniteEnter" id="uniteEnter">
+      <option value="years">year</option>
+      <option value="days">days</option>
+      <option value="hours">hours</option>
+      <option value="minutes">minutes</option>
+      <option value="seconds">seconds</option>
+    </select><br>
+    <label for="enterNumber">Enter a unites to convert :</label><br>
+    <select name="uniteExit" id="uniteExit">
+      <option value="years">year</option>
+      <option value="days">days</option>
+      <option value="hours">hours</option>
+      <option value="minutes">minutes</option>
+      <option value="seconds">seconds</option>
+    </select>
+    <input type="submit" value="Convert" id="newConvert">
+    <p id="resultValue"></p>
+
+
+
+    <script src="main.js"></script>
+
+
+  </body>
+</html>
