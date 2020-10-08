@@ -4,36 +4,56 @@ var playerWalk = 0;
 
 document.addEventListener('keydown', function(event){
   if(event.code == 'ArrowUp'){
-    playerWalk = playerWalk + 1;
-    player.style.top = (player.offsetTop - moveSize) + "px";
-    if(playerWalk % 2 === 0){
-      player.style.backgroundImage = "url(images/dos.png)";
+    if(player.offsetTop < 24){
+      playerWalk = playerWalk;
+      // pour bloquer le personnage, qu'il ne sorte pas du cadre
     }else{
-      player.style.backgroundImage = "url(images/dos-marche.png)";
+      playerWalk = playerWalk + 1;
+      player.style.top = (player.offsetTop - moveSize) + "px";
+      if(playerWalk % 2 === 0){
+        player.style.backgroundImage = "url(images/dos.png)";
+      }else{
+        player.style.backgroundImage = "url(images/dos-marche.png)";
+      }
     }
+
   }else if(event.code == 'ArrowRight'){
-    playerWalk = playerWalk + 1;
-    player.style.left = (player.offsetLeft + moveSize) + "px";
-    if(playerWalk % 2 === 0){
-      player.style.backgroundImage = "url(images/profil-droit.png)";
+    if(player.offsetLeft > 740){
+      playerWalk = playerWalk;
     }else{
-      player.style.backgroundImage = "url(images/profil-marche-droite.png)";
+      playerWalk = playerWalk + 1;
+      player.style.left = (player.offsetLeft + moveSize) + "px";
+      if(playerWalk % 2 === 0){
+        player.style.backgroundImage = "url(images/profil-droit.png)";
+      }else{
+        player.style.backgroundImage = "url(images/profil-marche-droite.png)";
+      }
     }
+
   }else if(event.code == 'ArrowDown'){
-    playerWalk = playerWalk + 1;
-    player.style.top = (player.offsetTop + moveSize) + "px";
-    if(playerWalk % 2 === 0){
-      player.style.backgroundImage = "url(images/face.png)";
+    if(player.offsetTop > 640){
+      playerWalk = playerWalk;
     }else{
-      player.style.backgroundImage = "url(images/face-marche.png)";
+      playerWalk = playerWalk + 1;
+      player.style.top = (player.offsetTop + moveSize) + "px";
+      if(playerWalk % 2 === 0){
+        player.style.backgroundImage = "url(images/face.png)";
+      }else{
+        player.style.backgroundImage = "url(images/face-marche.png)";
+      }
     }
+
   }else if(event.code == 'ArrowLeft'){
-    playerWalk = playerWalk + 1;
-    player.style.left = (player.offsetLeft - moveSize) + "px";
-    if(playerWalk % 2 === 0){
-      player.style.backgroundImage = "url(images/profil-gauche.png)";
+    if(player.offsetLeft < 24){
+    playerWalk = playerWalk;
     }else{
-      player.style.backgroundImage = "url(images/profil-marche-gauche.png)";
+      playerWalk = playerWalk + 1;
+      player.style.left = (player.offsetLeft - moveSize) + "px";
+      if(playerWalk % 2 === 0){
+        player.style.backgroundImage = "url(images/profil-gauche.png)";
+      }else{
+        player.style.backgroundImage = "url(images/profil-marche-gauche.png)";
+      }
     }
   }
 })
